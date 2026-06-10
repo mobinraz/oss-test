@@ -37,7 +37,7 @@ export default function ProvinceMap({ selectedProvince }: any) {
     return provinceGifs[selectedProvince] || "/gifs/default_iran.gif";
   }, [selectedProvince]);
 
-console.log("Province name:", selectedProvince);
+  console.log("Province name:", selectedProvince);
 
   return (
     <div className="flex-1 h-full rounded-3xl flex flex-col items-center justify-center border border-gray-100 relative">
@@ -51,6 +51,9 @@ console.log("Province name:", selectedProvince);
               className="object-cover transition-transform duration-700"
               priority
             />
+            <video autoPlay loop muted playsInline className="w-full h-auto">
+              <source src={currentGif!} type="video/webm" />
+            </video>
             <div className="absolute inset-x-0 bottom-0 h-24 bg-linear-to-t from-black to-transparent" />
             <div className="absolute top-4 left-4 flex items-center gap-2 px-3 py-1 bg-black/60 backdrop-blur-md rounded border border-green-500/30">
               <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
