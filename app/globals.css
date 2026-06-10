@@ -1,0 +1,143 @@
+@import "tailwindcss";
+@import "leaflet/dist/leaflet.css";
+
+@custom-variant dark (&:where(.dark, .dark *));
+@theme inline {
+  --color-background: #cce7ff;
+}
+
+@theme {
+  --main-bg-color: #000;
+  --primary-blue-01: #f0f2ff;
+  --primary-blue-02: #d9deff;
+  --primary-blue-03: #b3beff;
+  --primary-blue-04: #8c9dff;
+  --primary-blue-05: #667dff;
+  --primary-blue-06: #465fff;
+  --primary-blue-07: #3a4fcc;
+  --primary-blue-08: #2e3f99;
+  --primary-blue-09: #222f66;
+  --primary-blue-10: #161f33;
+  --primary-blue-11: #0b101a;
+  --secondary-green-01: #f2fcfa;
+  --secondary-green-02: #d6f5f0;
+  --secondary-green-03: #aeeae1;
+  --secondary-green-04: #7fddd0;
+  --secondary-green-05: #4dd1bf;
+  --secondary-green-06: #00c2a8;
+  --secondary-green-07: #00a892;
+  --secondary-green-08: #008e7b;
+  --secondary-green-09: #007465;
+  --secondary-green-10: #005a4f;
+  --secondary-green-11: #003f39;
+  --natural-gray-01: #eceff1;
+  --natural-gray-02: #d0d8db;
+  --natural-gray-03: #b2bdc4;
+  --natural-gray-04: #eceff1;
+  --natural-gray-05: #94a3ad;
+  --natural-gray-06: #667c89;
+  --natural-gray-07: #596d78;
+  --natural-gray-08: #495963;
+  --natural-gray-09: #3a464e;
+  --natural-gray-10: #283137;
+  --natural-gray-11: #010101;
+  --semantic-green-01: #e6f4ef;
+  --semantic-green-02: #c2e6d7;
+  --semantic-green-03: #9dd8bf;
+  --semantic-green-04: #79caa7;
+  --semantic-green-05: #54bc8f;
+  --semantic-green-06: #30ae77;
+  --semantic-green-07: #178b5e;
+  --semantic-green-08: #136f4b;
+  --semantic-green-09: #0f5439;
+  --semantic-green-10: #0a3826;
+  --semantic-green-11: #061d13;
+  --semantic-orange-01: #fdf3f1;
+  --semantic-orange-02: #f9ddd8;
+  --semantic-orange-03: #f3b8ae;
+  --semantic-orange-04: #ec9183;
+  --semantic-orange-05: #e56f5d;
+  --semantic-orange-06: #dc5944;
+  --semantic-orange-07: #c84f3c;
+  --semantic-orange-08: #b04534;
+  --semantic-orange-09: #973b2c;
+  --semantic-orange-10: #7d3024;
+  --semantic-orange-11: #5e241b;
+}
+
+@font-face {
+  font-family: "font";
+  src: url("/fonts/Aurora.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.font-custom {
+  font-family: "font";
+}
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+.login-bg {
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)),
+    url("/login.jpg") no-repeat center center;
+  background-size: cover;
+}
+
+.province-label {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 6px;
+  padding: 2px 6px;
+  font-size: 11px;
+  font-weight: 600;
+  color: #fff !important;
+  border: none;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+.leaflet-container {
+  background: url("/r.jpg");
+  background-color: #ffffff !important;
+}
+
+.progress-container {
+  width: 100%;
+  height: 12px;
+  background: #e6e6e6;
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+}
+
+.progress-bar {
+  height: 100%;
+  background: #8c9dff;
+  border-radius: 8px;
+  position: relative;
+  transition: width 0.3s ease;
+}
+
+.progress-bar.striped {
+  background-image: repeating-linear-gradient(
+    150deg,
+    rgba(255, 255, 255, 0.4) 0,
+    rgba(255, 255, 255, 0.4) 10px,
+    rgba(255, 255, 255, 0.2) 10px,
+    rgba(255, 255, 255, 0.2) 20px
+  );
+
+  animation: moveStripes 1s linear infinite;
+  background-size: 40px 40px;
+}
+
+@keyframes moveStripes {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 40px 0;
+  }
+}
